@@ -1,0 +1,220 @@
+﻿<!Doctype html>
+<html class="home">
+<head>
+    <style>
+        body {
+            background: linear-gradient(to bottom,#bfbfbf,#f2f2f2) no-repeat center center fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            font-family: Trebuchet MS;
+            font-weight: 900;
+        }
+
+        /* begin nav bar css */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+                background-color: grey;
+            }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                float: none;
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .show {
+            display: block;
+        }
+        /* end nav bar */
+
+        .message {
+            font-size: medium;
+            font-weight: bold;
+            margin: auto;
+            width: 8em
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+
+        table {
+            border-spacing: 5px;
+            width: 75%
+        }
+
+        td, th {
+            text-align: center;
+        }
+
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button.submit {
+            padding: 7px 14px;
+            color: white;
+            background: #008ae6;
+            font-weight: bold;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Cinema E-Booking</title>
+
+
+</head>
+<body>
+    <header>
+        <h1>Cinema E-Booking</h1>
+    </header>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="drop()">Options</button>
+            <div class="dropdown-content" id="dropDownList">
+                <a href="#">Edit Profile</a>
+                <a href="#">View Order History</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1>Movie Details</h1>
+
+    <div class="message"></div>
+    <img src="http://www.gstatic.com/tv/thumb/v22vodart/173378/p173378_v_v8_at.jpg" />
+    </div>
+    <br />
+    <font size="5" face="Courier New">
+        <table class="center" ; border="1">
+            <tr>
+                <td><b>Movie Title:</b></td>
+                <td>The Dark Knight</td>
+            </tr>
+            <tr>
+                <td><b>Category:</b></td>
+                <td>Drama/Thriller</td>
+            </tr>
+            <tr>
+                <td><b>Cast:</b></td>
+                <td>
+                    Christian Bale,
+                    Michael Caine,
+                    Heath Ledger,
+                    Gary Oldman,
+                    Aaron Eckhart,
+                    Maggie Gyllenhaal,
+                    Morgan Freeman
+                </td>
+            </tr>
+            <tr>
+                <td><b>Director:</b></td>
+                <td>Christopher Nolan</td>
+            </tr>
+            <tr>
+                <td><b>Producer:</b></td>
+                <td>
+                    Emma Thomas,
+                    Charles Roven,
+                    Christopher Nolan
+                </td>
+            </tr>
+            <tr>
+                <td><b>Synopsis:</b></td>
+                <td>With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), 
+                Batman (Christian Bale) has been able to keep a tight lid on crime in Gotham City. But when a 
+                vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, 
+                the caped Crusader begins to tread a fine line between heroism and vigilantism.</td>
+            </tr>
+            <tr>
+                <td><b>Reviews:</b></td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td><b>Film Rating:</b></td>
+                <td>PG-13</td>
+            </tr>
+        </table>
+    </font>
+    <br /><br />
+
+    <center>
+        <button class="submit"/>
+            Book this movie
+        </button>
+        <button class="submit"/>
+            Back to browsing movies
+        </button>
+    </center>
+
+    <script>
+        function drop() {
+            document.getElementById("dropDownList").classList.toggle("show")
+        }
+
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("dropDownList");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

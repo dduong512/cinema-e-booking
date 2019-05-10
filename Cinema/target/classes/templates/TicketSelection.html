@@ -1,0 +1,168 @@
+<!Doctype html>
+
+<html class="home">
+    <head>
+        <style>
+            body {
+                background: linear-gradient(to bottom,FireBrick,Gold) no-repeat center center fixed;
+            }
+            .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          .dropdown {
+            float: right;
+            overflow: hidden;
+          }
+          .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+            background-color: grey;
+          }
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          .show {
+            display: block;
+          }
+
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                font-family: Trebuchet MS;
+                font-weight: 900;
+            }
+
+	p{
+                font-family: Trebuchet MS;
+		color: white;
+	}
+	select{
+		width: 50px;
+		text-size: 20;
+		height: 25px;
+	}
+
+	.btn{
+		border: none;
+		background-color: inherit;
+		padding: 20px 20px;
+		font-size: 16px;
+		cursor: pointer;
+		display: inlin-block;
+	}
+        </style>
+        <meta charset="UTF-8">
+        <title>Cinema E-Booking</title>
+    </head>
+	<body>
+		 <header>
+      <h1>Cinema E-Booking</h1>
+    </header>
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#browse">Browse Movies</a>
+      <a href="#search">Search Movies</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="drop()">User</button>
+        <div class="dropdown-content" id="dropDownList">
+          <a href="#">Profile</a>
+          <a href="#">View Order History</a>
+          <a href="#">Logout</a>
+        </div>
+
+      </div> 
+         
+    </div>
+		
+		<div align="center">
+			<p><font size="8">Enter Tickets</p>
+
+			<p><font size="5"> Adult tickets: $12.00 x 
+				<select>
+					<option value =""> 0</option>
+					<option value =""> 1</option>
+					<option value =""> 2</option>
+					<option value =""> 3</option>
+					<option value =""> 3</option>	
+				</select>
+
+			</p>
+		
+			<p><font size="5"> Senior tickets: $10.00 x 
+				<select>
+					<option value =""> 0</option>
+					<option value =""> 1</option>
+					<option value =""> 2</option>
+					<option value =""> 3</option>
+					<option value =""> 3</option>	
+				</select>
+
+			</p>
+
+			<p><font size="5"> Child tickets: $8.00 x 
+				<select>
+					<option value =""> 0</option>
+					<option value =""> 1</option>
+					<option value =""> 2</option>
+					<option value =""> 3</option>
+					<option value =""> 3</option>	
+				</select>
+				
+			</p>
+			<p>
+				<button>Continute</button>
+				<button>Select New Time</button>
+			</p> 
+		</div>
+        
+        <script>
+      function drop(){
+        document.getElementById("dropDownList").classList.toggle("show")
+      }
+
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("dropDownList");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+    </script>
+	</body>
+</html>

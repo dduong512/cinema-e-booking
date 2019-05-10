@@ -1,0 +1,245 @@
+<!Doctype html>
+<html class="home">
+  <head>
+      <style>
+          body {
+            background: linear-gradient(to bottom,#bfbfbf,#f2f2f2) no-repeat center center fixed;
+            font-family: Arial, Helvetica, sans-serif;        
+          }
+          h1 {
+            text-align: center;
+            font-size: 3em;
+            font-family: Trebuchet MS;
+            font-weight: 900;
+          }
+
+          /* begin nav bar css */
+          .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          .dropdown {
+            float: right;
+            overflow: hidden;
+          }
+          .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+            background-color: grey;
+          }
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          .show {
+            display: block;
+          }
+          /* end nav bar */
+          
+          /* Begin form css */
+          .add-employee-form {
+            max-width: 550px;
+            min-width: 500px;
+            font: 13px Arial;
+            padding: 20px;
+            margin: auto;
+          }
+          .add-employee-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 2px;
+          }
+          .add-employee-form li {
+            display: block;
+            list-style: none;
+            margin-bottom: 15px;
+            
+          }
+          .add-employee-form .one-field-inline {
+            width: 100%;
+          }
+          .add-employee-form .three-field-inline {
+            width: 32.85%;
+          }
+          .add-employee-form span {
+            color: #ff1a1a;
+          }
+          .add-employee-form select,
+          .add-employee-form input[type=email],
+          .add-employee-form input[type=text] {
+            padding: 7px;
+            border: 1px solid #999999;
+            box-sizing: border-box;
+          }
+          .add-employee-form input[type=submit] {
+            padding: 7px 14px;            
+            color: white;
+            background: #008ae6;
+          }
+          .add-employee-form input[type=submit]:hover {
+            background: #00ace6;
+          }
+          .add-employee-form .auth-checkbox {
+            display: inline;
+          }
+		  textarea{
+		  	  overflow: visible;
+			  width: 100%;
+
+		  }
+          /* end form css */
+        </style>  
+        <meta charset="UTF-8">
+        <title>Cinema E-Booking</title>
+    </head>
+  <body>
+    <header>
+      <h1>Admin Home</h1>
+    </header>
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#news">Customer View</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="drop()">Admin</button>
+        <div class="dropdown-content" id="dropDownList">
+          <a href="#">Logout</a>
+          <a href="#">Stuff</a>
+          <a href="#">More Stuff</a>
+        </div>
+      </div> 
+    </div>
+    <br>
+    <h1>Add Movie</h1>
+
+    <!-- Begin Form -->
+    <form id="movieForm">
+      <ul class="add-employee-form">
+        <li>
+          <label>Movie Title <span>*</span></label>
+          <input type="text" class="one-field-inline" name="title" placeholder="Title">
+        </li>
+        <li class="cast" id="cast">
+          <label>Cast <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="castM" placeholder="Cast member">
+		  
+        </li>
+		<button id="addC" onlick="addC(cast)">Add Cast member</button>
+        <li>
+          <label>Director <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="director">
+        </li>
+        <li>
+          <label>Producer <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="producer">
+        </li>
+        <li>
+          <label>Trailer picture <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="pic" placeholder="img url">
+        </li>
+		 <li>
+          <label>Trailer video <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="vid" placeholder="video url">
+        </li>
+        <li>
+		<label>Category <span class="required">*</span></label>
+            <select class="one-field-inline" name="category">
+            <option value="" disabled selected>Category</option>
+            <option value="Ac">Action</option>
+            <option value="Ad">Adventure</option>
+            <option value="Ch">Children</option>
+            <option value="An">Animated</option>
+            <option value="Co">Comedy</option>
+            <option value="Dr">Drama</option>
+            <option value="Dc">Documentary</option>
+            <option value="Ms">Musical</option>
+            <option value="Hr">Horror</option>
+            <option value="Fa">Fantasy</option>
+            <option value="Sf">Science Fiction</option>
+            <option value="Ws">Western</option>
+            <option value="Ro">Romance</option>
+            <option value="Th">Thriller</option>
+            <option value="My">Mystery</option>
+          </select>
+          
+        </li>
+		 <li>
+		<label>Rating <span class="required">*</span></label>
+            <select class="one-field-inline" name="rating">
+            <option value="" disabled selected>Rating</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+            <option value="Nc-17">Nc-17</option>
+          </select>
+          
+        </li>
+        <br>
+		<li>
+		<label>Synopsis <span class="required"></span></label><br>
+          <textarea form="movieForm" name="synopsis">Enter Synopsis...</textarea>
+		</li>
+		
+        <li>
+          <input type="submit" value="Submit" />
+        </li>
+      </ul>
+    </form>
+	
+    <!-- End Form -->
+
+    <br><br><br><br><br>
+
+
+    <script>
+	
+      function drop(){
+        document.getElementById("dropDownList").classList.toggle("show")
+      }
+
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("dropDownList");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+
+    </script>
+  </body>
+</html>

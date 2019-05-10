@@ -1,0 +1,301 @@
+<!Doctype html>
+<html class="home">
+  <head>
+      <style>
+          body {
+            background: linear-gradient(to bottom,FireBrick,Gold) no-repeat center center fixed;
+            font-family: Arial, Helvetica, sans-serif;        
+          }
+          h1 {
+            text-align: center;
+            font-size: 3em;
+            font-family: Trebuchet MS;
+            font-weight: 900;
+          }
+			
+            p{
+            text-align: center;
+            font-size: 25px;
+            }
+		
+          /* begin nav bar css */
+          .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          .dropdown {
+            float: right;
+            overflow: hidden;
+          }
+          .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+            background-color: grey;
+          }
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          .show {
+            display: block;
+          }
+          /* end nav bar */
+          
+          /* Begin form css */
+          .add-employee-form {
+            max-width: 550px;
+            min-width: 500px;
+            font: 13px Arial;
+            padding: 20px;
+            margin: auto;
+          }
+          .add-employee-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 2px;
+          }
+          .add-employee-form li {
+            display: block;
+            list-style: none;
+            margin-bottom: 15px;
+            
+          }
+          .add-employee-form .one-field-inline {
+            width: 100%;
+          }
+          .add-employee-form .three-field-inline {
+            width: 32.85%;
+          }
+          .add-employee-form span {
+            color: #ff1a1a;
+          }
+          .add-employee-form select,
+          .add-employee-form input[type=email],
+          .add-employee-form input[type=text] {
+            padding: 7px;
+            border: 1px solid #999999;
+            box-sizing: border-box;
+          }
+          .add-employee-form input[type=submit] {
+            padding: 7px 14px;            
+            color: white;
+            background: #008ae6;
+          }
+          .add-employee-form input[type=submit]:hover {
+            background: #00ace6;
+          }
+          .add-employee-form .auth-checkbox {
+            display: inline;
+          }
+          /* end form css */
+          
+          
+          .button{
+          
+          }
+        </style>  
+        <meta charset="UTF-8">
+        <title>Cinema E-Booking</title>
+    </head>
+  <body>
+    <header>
+      <h1>Cinema E-Booking</h1>
+    </header>
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#browse">Browse Movies</a>
+      <a href="#search">Search Movies</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="drop()">User</button>
+        <div class="dropdown-content" id="dropDownList">
+          <a href="#">Profile</a>
+          <a href="#">View Order History</a>
+          <a href="#">Logout</a>
+        </div>
+
+      </div> 
+         
+    </div>
+    <br>
+    <h1>Order Preview</h1>
+    
+    <form>
+      <ul class="add-employee-form">
+      	
+    <p> Movie: How to Train Your Dragon</p>
+    <p> Time: 01 March 2019, 7:00pm</p>
+    <p> Tickets:</p>
+    <p> 1 Adult X $12.00 <input type="submit" value="Remove"> </p>
+    <p> 2 Children X $8.00  <input type="submit" value="Remove"></p>
+    <p> Seats: E2,E3,E4</p>
+	<p> Order Total: $32.68 </p>
+    
+    		<div align="center">
+		    <input type="submit" value="Update Order">
+            </div>
+      </ul>
+    </form>
+    <h1>Payment</h1>
+
+    <!-- Begin Form -->
+    <form>
+      <ul class="add-employee-form">
+      	<li>
+          <label>Credit Card Number <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="cardnumber">
+          </li>
+          
+          <li>
+          <label>Expiraion Date <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="expirationdate" placeholder="mm/yyyy">
+          </li>
+          
+          <li>
+          <label>Security Number <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="securitynumber">
+        </li>
+        
+        <li>
+          <label>Full Name <span>*</span></label>
+          <input type="text" class="three-field-inline" name="firstname" placeholder="First">
+          <input type="text" class="three-field-inline" name="middlename" placeholder="Middle">
+          <input type="text" class="three-field-inline" name="lastname" placeholder="Last">
+        </li>
+       
+        <li>
+          <label>Address <span class="required">*</span></label>
+          <input type="text" class="one-field-inline" name="street" placeholder="Street">
+        </li>
+        <li>
+          <input type="text" class="three-field-inline" name="city" placeholder="City">
+          <select class="three-field-inline" name="state">
+            <option value="" disabled selected>State</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+          </select>
+          <input type="text" class="three-field-inline" name="zip" placeholder="ZIP Code">
+        </li>
+        
+        <li>
+          <label>Email </label>
+          <input type="email" class="one-field-inline" name="email">
+        </li>
+        <li>
+          <label>Phone Number </label>
+          <input type="text" class="one-field-inline" name="phone" placeholder="(XXX) XXX-XXXX">
+        </li>
+        <li>
+          <label>Promo Code</label>
+          <input type="text" class="one-field-inline" name="promocode" placeholder="XXXX-XXXX">
+        </li>
+        
+        <br>
+        <li>
+          <input type="submit" value="Place Order">
+          <input type="submit" value="Cancel">
+        </li>
+      </ul>
+    </form>
+    <!-- End Form -->
+
+    <br><br><br><br><br>
+
+
+    <script>
+      function drop(){
+        document.getElementById("dropDownList").classList.toggle("show")
+      }
+
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("dropDownList");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

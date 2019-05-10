@@ -1,0 +1,189 @@
+<!doctype html>
+<html class="home" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+
+    html {
+  		height: 100%;
+        font: Arial;
+    }
+   	body {
+ 		margin: 0px;
+       	background: url("https://i.imgur.com/QFqEcxr.jpg") no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+  	}	
+	.page-head {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to bottom right, #cc0000, black);
+		padding-top: 10px;
+		margin-bottom: 40px;
+ 	}
+      .page-head img {
+      	display: block;
+       	margin-left: auto;
+       	margin-right: auto;
+      }
+      .navbar {
+        margin-top: 20px;
+      }
+      .my-dropdown-hover:hover {
+        background-color: #212529;
+      }
+      
+      table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  table-layout: fixed;
+		  width: 75%;
+		  background-color: #808080;
+		  margin-bottom: 100 px;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		  color: white;
+		  font-size: 13px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #666666;
+		  font-size: 13px;
+		}
+		
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            font-family: Trebuchet MS;
+            font-weight: 900;
+            color: white;
+        }
+        h4 {
+        	text-align: center;
+        	color: white;
+    	}	
+    	
+    	li{
+    		text-align: center;
+    	}
+
+		input{
+			text-align: center;
+			width: 30%;
+		}
+    </style>
+    <title>5PC | Search Movies</title>
+  </head>
+  <body>
+    <!--Begin Page Header -->
+  	<div class="page-head">
+			<header>
+				<img src="https://i.imgur.com/biJGsjo.gif" alt="5P Cinemas"  id="5p-logo"></img>
+			</header>
+      <!-- Begin navbar -->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item border-right border-left px-2">
+              <a class="nav-link px-3" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item border-right px-2 active">
+              <a class="nav-link px-3" href="#">Search Movies</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown border-right border-left px-2">
+              <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  User
+              </a>
+              <div class="dropdown-menu dropdown-menu-right bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item text-light my-dropdown-hover" href="#">View Profile</a>
+                <a class="dropdown-item text-light my-dropdown-hover" href="#">View Orders</a>
+                <a class="dropdown-item text-light my-dropdown-hover" href="#">Log Out</a>
+              </div>
+            </li>
+            <li class="nav-item border-right px-2">
+              <a class="nav-link px-3" href="#">Log In</a>
+            </li>
+            <li class="nav-item border-right px-2">
+              <a class="nav-link px-3" href="#">Register</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End navbar -->
+  	</div>
+    <!-- End Page Header -->
+ 
+ 	<h1>Search Movie</h1>
+ 
+ 	<br>
+ 	<br>
+ 	<h4>Search by Title, Genre, Show Date</h4>
+    
+    <li>
+    	<input id="searchMovie" type="text" placeholder="Search Movie">
+    </li>
+   
+    <br>
+    <table align ="center">
+  <thead>
+  <tr bgcolor="#000000">
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Show Date</th>
+  </tr>
+  </thead>
+  <tbody id="movies">
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>john@example.com</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td>Moe</td>
+    <td>mary@mail.com</td>
+  </tr>
+  <tr>
+    <td>July</td>
+    <td>Dooley</td>
+    <td>july@greatstuff.com</td>
+  </tr>
+  <tr>
+    <td>Anja</td>
+    <td>Ravendale</td>
+    <td>a_r@test.com</td>
+  </tr>
+  </tbody>
+</table>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("#searchMovie").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#movies tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+	</script>
+
+  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

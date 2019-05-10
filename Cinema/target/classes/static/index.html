@@ -1,0 +1,178 @@
+<!Doctype html>
+
+<html class="home">
+    <head>
+        <style>
+            body {
+                background: linear-gradient(to bottom,FireBrick,Gold) no-repeat center center fixed;
+            }
+            
+            .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+            .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          .dropdown {
+            float: right;
+            overflow: hidden;
+          }
+          .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+            background-color: grey;
+          }
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          .show {
+            display: block;
+          }
+
+           
+            h1 {
+                text-align: center;
+                font-size: 3em;
+                font-family: Arial;
+            }
+
+            div.gallery img:hover {
+                border: 1px solid #777;
+            }
+            div.gallery img {
+                width: 150px;
+                height: 250px;
+                margin: 20px;
+                margin-bottom: 5px;
+            }
+            div.moviecontainer {
+                display: inline-block;
+                text-align: center;
+            }
+            button.book {
+                vertical-align: bottom;
+                width: 150px;
+            }
+            button.details {
+                vertical-align: bottom;
+                width: 150px;
+                margin-top: 10px;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title>Cinema E-Booking</title>
+    </head>
+	<body>
+		<header>
+			<h1>Cinema E-Booking</h1>
+		</header>
+		 <div class="navbar">
+     		 <a href="#home">Home</a>
+    	 	 <a href="#browse">Browse Movies</a>
+      		<a href="#search">Search Movies</a>
+			<div class="dropdown">
+    		    <button class="dropbtn" onclick="drop()">User</button>
+    		    <div class="dropdown-content" id="dropDownList">
+        		  <a href="#">Profile</a>
+       			   <a href="#">View Order History</a>
+       		 	  <a href="#">Logout</a>
+       			 </div>
+      		 </div>     
+      </div> 
+      
+        <div class="gallery">
+            <div class="moviecontainer">
+                <a target="_blank" href="">
+                    <img src="http://wwwcdn.howdesign.com/wp-content/uploads/7f2c6056de513cac.png" width="30" height="400">
+                </a>
+                <form method="get" action="">
+                    <button class="book" type="submit">Book Now</button>
+                </form>
+                <form method="get" action="">
+                    <button class="details" type="submit">View Details</button>
+                </form>
+            </div>
+            <div class="moviecontainer">
+                <a target="_blank" href="">
+                    <img src="https://i.pinimg.com/originals/0f/b4/1f/0fb41ff936741bb71415352180b86611.jpg" width="30" height="400">
+                </a>
+                <form method="get" action="">
+                    <button class="book" type="submit">Book Now</button>
+                </form>
+                <form method="get" action="">
+                    <button class="details" type="submit">View Details</button>
+                </form>
+            </div>
+            <div class="moviecontainer">
+                <a target="_blank" href="">
+                    <img src="http://www.theshiznit.co.uk/media/2013/January/oscarposters/lincoln-large.jpg" width="30" height="400">
+                </a>
+                <form method="get" action="">
+                    <button class="book" type="submit">Book Now</button>
+                </form>
+                <form method="get" action="">
+                    <button class="details" type="submit">View Details</button>
+                </form>
+            </div>
+            <div class="moviecontainer">
+                <a target="_blank" href="">
+                    <img src="http://graphicdesignjunction.com/wp-content/uploads/2012/03/large/movies-poster-33.jpg" width="30" height="400">
+                </a>
+                <form method="get" action="">
+                    <button class="book" type="submit">Book Now</button>
+                </form>
+                <form method="get" action="">
+                    <button class="details" type="submit">View Details</button>
+                </form>
+            </div>
+        </div>
+        
+         <script>
+      function drop(){
+        document.getElementById("dropDownList").classList.toggle("show")
+      }
+
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          var myDropdown = document.getElementById("dropDownList");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+    </script>
+        
+	</body>
+</html> 
